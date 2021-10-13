@@ -54,7 +54,12 @@ console.log(cumLaude([8, 9, 4, 6, 10]));
 
 /* Opdracht  2: Gemiddeld cijfer */
 
-
+let totalScore = 0;
+for (let i = 0; i < grades.length; i++) {
+    totalScore += grades[i];
+}
+const average = totalScore / grades.length;
+console.log(average); //6.642857142857143
 
 /* 2a: Script schrijven  */
 // De studenten-administratie moet ieder blok opnieuw berekenen wat het gemiddelde eindcijfer is, maar we beginnen met de grades array van hierboven.
@@ -66,6 +71,19 @@ console.log(cumLaude([8, 9, 4, 6, 10]));
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+function averageGrade(gradeList) {
+    let totalScore = 0;
+    for (let i = 0; i < gradeList.length; i++) {
+        totalScore += gradeList[i];
+    }
+
+    const averageGrade = totalScore / gradeList.length;
+    return averageGrade.toFixed(2);
+}
+
+console.log(averageGrade(grades));
+console.log(averageGrade([6, 4, 5]));
+console.log(averageGrade([8, 9, 4, 6, 10]));
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -76,6 +94,7 @@ console.log(cumLaude([8, 9, 4, 6, 10]));
 // averageGrade(grades) geeft 6.642857142857143
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
+
 
 
 /* 2c: Afronden op twee decimalen */
