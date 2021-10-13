@@ -6,6 +6,14 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 /* Opdracht  1: Cum Laude */
 
+let amountOfCumLaudeStudents = 0;
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 8) {
+        amountOfCumLaudeStudents++;
+    }
+}
+console.log(amountOfCumLaudeStudents);
+
 /* 1a: Script schrijven  */
 // De administratie moet weten hoeveel studenten er dit blok cum laude zijn afgestudeerd (8 of hoger). Daar moeten namelijk speciale diploma's voor besteld worden.
 // Schrijf de stapjes om dit te kunnen checken eerst uit en vraag jezelf de volgende dingen af:
@@ -15,6 +23,20 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6
+
+function cumLaude(gradeList) {
+    let amountOfCumLaudeStudents = 0;
+    for (let i = 0; i < gradeList.length; i++) {
+        if (gradeList[i] >= 8) {
+            amountOfCumLaudeStudents++;
+        }
+    }
+    return amountOfCumLaudeStudents;
+}
+
+console.log(cumLaude(grades));
+console.log(cumLaude([6, 4, 5]));
+console.log(cumLaude([8, 9, 4, 6, 10]));
 
 
 /*  1b: Omschrijven tot een herbruikbare functie   */
@@ -31,6 +53,8 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 
 /* Opdracht  2: Gemiddeld cijfer */
+
+
 
 /* 2a: Script schrijven  */
 // De studenten-administratie moet ieder blok opnieuw berekenen wat het gemiddelde eindcijfer is, maar we beginnen met de grades array van hierboven.
