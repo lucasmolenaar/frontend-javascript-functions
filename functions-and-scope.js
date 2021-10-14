@@ -81,9 +81,9 @@ function averageGrade(gradeList) {
     return averageGrade.toFixed(2);
 }
 
-console.log(averageGrade(grades));
-console.log(averageGrade([6, 4, 5]));
-console.log(averageGrade([8, 9, 4, 6, 10]));
+console.log('Gemiddelde: ' + averageGrade(grades));
+console.log('Gemiddelde: ' + averageGrade([6, 4, 5]));
+console.log('Gemiddelde: ' + averageGrade([8, 9, 4, 6, 10]));
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -106,6 +106,14 @@ console.log(averageGrade([8, 9, 4, 6, 10]));
 
 /* Bonusopdracht: hoogste cijfer */
 
+let highestNum = grades[0];
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] > grades[i-1] && grades[i] > highestNum) {
+        highestNum = grades[i];
+    }
+}
+console.log('Hoogste cijfer: ' + highestNum);
+
 /* 3a: Script schrijven  */
 // Schrijf een script die op basis van de grades array (hierboven) checkt wat het hoogst behaalde cijfer is. Je mag hier geen bestaande methoden voor gebruiken. Schrijf de stapjes eerst uit en vraag jezelf de volgende dingen af:
 // * Hoe kan ik iedere waarde van de array langsgaan?
@@ -115,6 +123,19 @@ console.log(averageGrade([8, 9, 4, 6, 10]));
 
 // ---- Verwachte uitkomst: 9
 
+function highestGrade(gradeList) {
+    let highestGrade = gradeList[0];
+    for (let i = 0; i < gradeList.length; i++) {
+        if (gradeList[i] > gradeList[i-1] && gradeList[i] > highestGrade) {
+            highestGrade = gradeList[i];
+        }
+    }
+    return highestGrade;
+}
+
+console.log('Hoogste cijfer: ' + highestGrade(grades));
+console.log('Hoogste cijfer: ' + highestGrade([6, 4, 5]));
+console.log('Hoogste cijfer: ' + highestGrade([8, 9, 4, 6, 10]));
 
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
