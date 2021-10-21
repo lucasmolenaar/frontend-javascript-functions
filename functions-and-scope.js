@@ -126,7 +126,7 @@ console.log('Hoogste cijfer: ' + highestNum);
 function highestGrade(gradeList) {
     let highestGrade = gradeList[0];
     for (let i = 0; i < gradeList.length; i++) {
-        if (gradeList[i] > gradeList[i-1] && gradeList[i] > highestGrade) {
+        if (gradeList[i] > highestGrade) {
             highestGrade = gradeList[i];
         }
     }

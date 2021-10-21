@@ -60,10 +60,7 @@ function checkEmailValidity(email) {
     const hasNoComma = !email.includes(',');
     const hasNoPeriod = email.charAt(email.length - 1) !== '.';
 
-    if (hasAtSign && hasNoComma && hasNoPeriod) {
-        return true;
-    }
-    return false;
+    return hasAtSign && hasNoComma && hasNoPeriod;
 }
 console.log(checkEmailValidity('n.eeken@novi.nl'));
 console.log(checkEmailValidity('tessmellink@novi.nl'));
